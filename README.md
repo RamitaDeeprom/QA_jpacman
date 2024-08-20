@@ -37,3 +37,6 @@ Main contributors:
     1. For tests only run `./gradlew test`
     2. For static analysis tools only run `./gradlew staticAnalysis`
 	 
+
+Tested by Ramita Deeprom
+![image](https://github.com/user-attachments/assets/2e090c58-d4ec-41ef-a083-3fe872524b9e)
