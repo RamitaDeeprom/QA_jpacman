@@ -18,6 +18,28 @@ public class BoardTest {
     }
 
     @Test
+    void testWithinBorders() {
+        Square basicSquare = new BasicSquare();
+        Square[][] basicGrid = new Square[2][2];
+        basicGrid[0][0] = basicSquare;
+        basicGrid[0][1] = basicSquare;
+        basicGrid[1][0] = basicSquare;
+        basicGrid[1][1] = basicSquare;
+        Board board = new Board(basicGrid);
+
+        // Test for valid coordinates (within the grid)
+        assertThat(board.withinBorders(0, 0)).isTrue();
+        assertThat(board.withinBorders(1, 1)).isTrue();
+
+        // Test for invalid coordinates (outside the grid)
+        assertThat(board.withinBorders(2, 2)).isFalse();
+        assertThat(board.withinBorders(-1, 0)).isFalse();
+        assertThat(board.withinBorders(0, -1)).isFalse();
+    }
+
+
+
+    @Test
     void testBoardWithOneNullSquare() {
         Square basicSquare = new BasicSquare();
         Square[][] basicGrid = new Square[1][1];
