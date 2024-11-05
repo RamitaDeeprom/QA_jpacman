@@ -4,7 +4,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 import org.junit.jupiter.api.Test;
 
 /**
- * This is a test file for board building
+ * This is a test file for board building.
  */
 public class BoardTest {
 
