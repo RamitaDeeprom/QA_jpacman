@@ -1,11 +1,14 @@
 package nl.tudelft.jpacman.board;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class BoardTest {
 
+    /**
+     * Tests board creation with a single valid square and verifies
+     * that the board's invariant holds true after initialization.
+     */
     @Test
     void testBoardWithValidSquare() {
         Square basicSquare = new BasicSquare();
@@ -17,6 +20,10 @@ public class BoardTest {
         assertThat(board.invariant()).isTrue();
     }
 
+    /**
+     * Tests the withinBorders method to check if the provided coordinates
+     * fall within the bounds of the board's grid.
+     */
     @Test
     void testWithinBorders() {
         Square basicSquare = new BasicSquare();
@@ -37,8 +44,10 @@ public class BoardTest {
         assertThat(board.withinBorders(0, -1)).isFalse();
     }
 
-
-
+    /**
+     * Tests the board's behavior when accessing a square at specific coordinates,
+     * ensuring that squareAt returns the expected square from the grid.
+     */
     @Test
     void testBoardWithOneNullSquare() {
         Square basicSquare = new BasicSquare();
