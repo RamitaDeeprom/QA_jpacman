@@ -12,6 +12,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import nl.tudelft.jpacman.PacmanConfigurationException;
 import org.junit.jupiter.api.Assertions;
 
 /**
@@ -49,8 +50,8 @@ public class MapParserTest {
      */
     @Test
     public void testParseMapWrong1() {
-        IllegalArgumentException thrown =
-            Assertions.assertThrows(IllegalArgumentException.class, () -> {
+        PacmanConfigurationException thrown =
+            Assertions.assertThrows(PacmanConfigurationException.class, () -> {
                 MockitoAnnotations.initMocks(this);
                 assertNotNull(boardFactory);
                 assertNotNull(levelFactory);
@@ -62,6 +63,6 @@ public class MapParserTest {
                 map.add("#######");       // inconsistent row length
                 mapParser.parseMap(map);
             });
-        Assertions.assertEquals("Invalid map format", thrown.getMessage());
+        Assertions.assertEquals("Input text lines are not of equal width.", thrown.getMessage());
     }
 }
