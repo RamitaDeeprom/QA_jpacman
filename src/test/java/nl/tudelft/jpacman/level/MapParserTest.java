@@ -13,12 +13,11 @@ import java.util.ArrayList;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-    /**
-     * This is a test class for MapParser.
-     */
-
-    @ExtendWith(MockitoExtension.class)
-    public class MapParserTest {
+/**
+ * This is a test class for MapParser.
+ */
+@ExtendWith(MockitoExtension.class)
+public class MapParserTest {
     @Mock
     private BoardFactory boardFactory;
     @Mock
@@ -43,5 +42,4 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
         mapParser.parseMap(map);
         Mockito.verify(levelFactory, Mockito.times(1)).createGhost();
     }
-
 }
